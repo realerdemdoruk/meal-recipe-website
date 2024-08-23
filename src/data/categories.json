@@ -1,0 +1,104 @@
+{
+    "categories": [
+      {
+        "idCategory": "1",
+        "strCategory": "Biftek",
+        "strCategoryThumb": "https://www.themealdb.com/images/category/beef.png"
+      },
+      {
+        "idCategory": "2",
+        "strCategory": "Tavuk",
+        "strCategoryThumb": "https://www.themealdb.com/images/category/chicken.png"
+      },
+      {
+        "idCategory": "3",
+        "strCategory": "Tatlı",
+        "strCategoryThumb": "https://www.themealdb.com/images/category/dessert.png"
+      }
+    ],
+    "meals": [
+      {
+        "idMeal": "52772",
+        "strMeal": "Teriyaki Tavuk Güveci",
+        "strCategory": "Tavuk", 
+        "strArea": "Japon",
+        "strInstructions": "Fırını 175°C'ye (350°F) ısıtın. Orta ateşte küçük bir sos tenceresinde soya sosu, su, esmer şeker, toz zencefil ve ezilmiş sarımsağı birleştirin. Balı ekleyin ve sos kıvam alana kadar pişirin. Sosu tavuğun üzerine dökün ve 20-25 dakika pişirin.",
+        "strMealThumb": "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
+        "strYoutube": "https://www.youtube.com/watch?v=4aZr5hZXP_s",
+        "strIngredient1": "soya sosu",
+        "strMeasure1": "1/2 su bardağı",
+        "strIngredient2": "su",
+        "strMeasure2": "1/2 su bardağı",
+        "strIngredient3": "esmer şeker",
+        "strMeasure3": "1/2 su bardağı",
+        "strIngredient4": "toz zencefil",
+        "strMeasure4": "1/4 çay kaşığı",
+        "strIngredient5": "ezilmiş sarımsak",
+        "strMeasure5": "1/4 çay kaşığı",
+        "strIngredient6": "bal",
+        "strMeasure6": "2 yemek kaşığı"
+      },
+      {
+        "idMeal": "52908",
+        "strMeal": "Beef Wellington",
+        "strCategory": "Biftek", 
+        "strArea": "İngiliz",
+        "strInstructions": "Fırını 200°C'ye (400°F) ısıtın. Dana filetoyu sıcak bir tavada 2 dakika mühürleyin, ardından üzerine hardal sürün. Mantar duxelles ile kaplayın ve milföy hamuruna sarın. 25-30 dakika altın rengi olana kadar pişirin.",
+        "strMealThumb": "https://www.themealdb.com/images/media/meals/vvpprx1487325699.jpg",
+        "strYoutube": "https://www.youtube.com/watch?v=WRzsVZQ1_fY",
+        "strIngredient1": "dana fileto",
+        "strMeasure1": "1 kg",
+        "strIngredient2": "mantar",
+        "strMeasure2": "500g",
+        "strIngredient3": "milföy hamuru",
+        "strMeasure3": "500g",
+        "strIngredient4": "hardal",
+        "strMeasure4": "2 yemek kaşığı",
+        "strIngredient5": "yumurta sarısı",
+        "strMeasure5": "1 adet"
+      },
+      {
+        "idMeal": "52855",
+        "strMeal": "Kung Pao Tavuk",
+        "strCategory": "Tavuk",  
+        "strArea": "Çin",
+        "strInstructions": "Bir tavada yağı ısıtın, kuru kırmızı biber ve Sichuan biberlerini ekleyin. Tavuğu ekleyin ve pişene kadar kavurun. Sos malzemelerini karıştırın ve buharda pişirilmiş pilavla servis edin.",
+        "strMealThumb": "https://www.themealdb.com/images/media/meals/1525872624.jpg",
+        "strYoutube": "https://www.youtube.com/watch?v=Q5GgD_HvJMs",
+        "strIngredient1": "tavuk göğsü",
+        "strMeasure1": "300g",
+        "strIngredient2": "soya sosu",
+        "strMeasure2": "2 yemek kaşığı",
+        "strIngredient3": "mısır nişastası",
+        "strMeasure3": "1 yemek kaşığı",
+        "strIngredient4": "Sichuan biberi",
+        "strMeasure4": "1 çay kaşığı",
+        "strIngredient5": "kuru kırmızı biber",
+        "strMeasure5": "6 adet",
+        "strIngredient6": "yer fıstığı",
+        "strMeasure6": "1/4 su bardağı"
+      },
+      {
+        "idMeal": "52890",
+        "strMeal": "DENEMEEE",
+        "strCategory": "Tatlı",  
+        "strArea": "Çin",
+        "strInstructions": "Bir tavada yağı ısıtın, kuru kırmızı biber ve Sichuan biberlerini ekleyin. Tavuğu ekleyin ve pişene kadar kavurun. Sos malzemelerini karıştırın ve buharda pişirilmiş pilavla servis edin.",
+        "strMealThumb": "https://www.themealdb.com/images/media/meals/1525872624.jpg",
+        "strYoutube": "https://www.youtube.com/watch?v=Q5GgD_HvJMs",
+        "strIngredient1": "tavuk göğsü",
+        "strMeasure1": "300g",
+        "strIngredient2": "soya sosu",
+        "strMeasure2": "2 yemek kaşığı",
+        "strIngredient3": "mısır nişastası",
+        "strMeasure3": "1 yemek kaşığı",
+        "strIngredient4": "Sichuan biberi",
+        "strMeasure4": "1 çay kaşığı",
+        "strIngredient5": "kuru kırmızı biber",
+        "strMeasure5": "6 adet",
+        "strIngredient6": "yer fıstığı",
+        "strMeasure6": "1/4 su bardağı"
+      }
+    ]
+  }
+  
