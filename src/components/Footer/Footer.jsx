@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="footer-content">
             <div className="footer-content-column">
               <div className="footer-logo">
-                <a className="footer-logo-link" href="#">
+                <a className="footer-logo-link"      href="www.erdemdoruk.me">
                   <span className="hidden-link-text">LOGO</span>
                   <h1>LOGO</h1>
                 </a>
@@ -28,13 +28,13 @@ const Footer = () => {
                 <h2 className="footer-menu-name">Get Started</h2>
                 <ul id="menu-get-started" className="footer-menu-list">
                   <li className="menu-item">
-                    <a href="#">Start</a>
+                    <a      href="www.erdemdoruk.me">Start</a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">Documentation</a>
+                    <a      href="www.erdemdoruk.me">Documentation</a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">Installation</a>
+                    <a      href="www.erdemdoruk.me">Installation</a>
                   </li>
                 </ul>
               </div>
@@ -44,13 +44,13 @@ const Footer = () => {
                 <h2 className="footer-menu-name">Company</h2>
                 <ul id="menu-company" className="footer-menu-list">
                   <li className="menu-item">
-                    <a href="#">Contact</a>
+                    <a      href="www.erdemdoruk.me">Contact</a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">News</a>
+                    <a      href="www.erdemdoruk.me">News</a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">Careers</a>
+                    <a      href="www.erdemdoruk.me">Careers</a>
                   </li>
                 </ul>
               </div>
@@ -58,10 +58,10 @@ const Footer = () => {
                 <h2 className="footer-menu-name">Legal</h2>
                 <ul id="menu-legal" className="footer-menu-list">
                   <li className="menu-item">
-                    <a href="#">Privacy Notice</a>
+                    <a      href="www.erdemdoruk.me">Privacy Notice</a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">Terms of Use</a>
+                    <a      href="www.erdemdoruk.me">Terms of Use</a>
                   </li>
                 </ul>
               </div>
@@ -71,26 +71,26 @@ const Footer = () => {
                 <h2 className="footer-menu-name">Quick Links</h2>
                 <ul id="menu-quick-links" className="footer-menu-list">
                   <li className="menu-item">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a      href="www.erdemdoruk.me" target="_blank" rel="noopener noreferrer">
                       Support Center
                     </a>
                   </li>
                   <li className="menu-item">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a     href="www.erdemdoruk.me" target="_blank" rel="noopener noreferrer">
                       Service Status
                     </a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">Security</a>
+                    <a     href="www.erdemdoruk.me">Security</a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">Blog</a>
+                    <a      href="www.erdemdoruk.me">Blog</a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">Customers</a>
+                    <a      href="www.erdemdoruk.me">Customers</a>
                   </li>
                   <li className="menu-item">
-                    <a href="#">Reviews</a>
+                    <a     href="www.erdemdoruk.me">Reviews</a>
                   </li>
                 </ul>
               </div>
@@ -103,7 +103,7 @@ const Footer = () => {
                 </p>
                 <a
                   className="footer-call-to-action-button button"
-                  href="#"
+                  href="www.erdemdoruk.me"
                   target="_self"
                 >
                   Get in Touch
@@ -112,7 +112,7 @@ const Footer = () => {
               <div className="footer-call-to-action">
                 <h2 className="footer-call-to-action-title">Bize Ulaşın</h2>
                 <p className="footer-call-to-action-link-wrapper">
-                  <a className="footer-call-to-action-link" href="mail:erdemdoruk3@gmail.com">
+                <a className="footer-call-to-action-link" href="mailto:erdemdoruk3@gmail.com">
                     erdemdoruk3@gmail.com
                   </a>
                 </p>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Loading from '../../img/Loading.gif';
 import Salad from '../../img/salad.gif';
@@ -14,13 +14,8 @@ const Random = () => {
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
-    const getRandomMeal = () => {
-        // Random meal seç
-        const randomIndex = Math.floor(Math.random() * mealsData.meals.length);
-        return mealsData.meals[randomIndex];
-    };
-
-    const fetchRandomMeal = () => {
+    // useCallback ile memoize edilmiş fetchRandomMeal fonksiyonu
+    const fetchRandomMeal = useCallback(() => {
         try {
             setMeal(getRandomMeal());
             setIsPending(false);
@@ -28,11 +23,17 @@ const Random = () => {
             setError("Veri çekilirken bir hata oluştu.");
             setIsPending(false);
         }
+    }, []);
+
+    const getRandomMeal = () => {
+        // Random meal seç
+        const randomIndex = Math.floor(Math.random() * mealsData.meals.length);
+        return mealsData.meals[randomIndex];
     };
 
     useEffect(() => {
         fetchRandomMeal();
-    }, []);
+    }, [fetchRandomMeal]);
 
     return (
         <div className="category__details">
