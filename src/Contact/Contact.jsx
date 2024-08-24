@@ -9,6 +9,8 @@ const Contact = () => {
     message: "",
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -17,10 +19,42 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Form gönderildiğinde yapılacak işlemler (örneğin bir API isteği)
-    console.log("Form Data:", formData);
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formDataToSend = new FormData(event.target);
+
+    formDataToSend.append("access_key", "08b1bca0-2469-435d-b2d7-fe9bf8947055");
+
+    const object = Object.fromEntries(formDataToSend);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      console.log("Success", res);
+
+      // Form verilerini temizle
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      // Başarı mesajını göster
+      setIsSubmitted(true);
+
+      // Bildirimi 3 saniye sonra gizle
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } else {
+      console.log("Form submission failed", res);
+    }
   };
 
   return (
@@ -32,7 +66,7 @@ const Contact = () => {
       className="contact__container"
     >
       <h2>Bizimle İletişime Geçin</h2>
-      <form className="contact__form" onSubmit={handleSubmit}>
+      <form className="contact__form" onSubmit={onSubmit}>
         <div className="input__group">
           <input
             type="text"
@@ -80,6 +114,18 @@ const Contact = () => {
           Gönder
         </motion.button>
       </form>
+
+      {/* Başarı mesajını göster */}
+      {isSubmitted && (
+        <motion.div
+          className="contact__success"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Mesajınız iletildi!
+        </motion.div>
+      )}
     </motion.div>
   );
 };
