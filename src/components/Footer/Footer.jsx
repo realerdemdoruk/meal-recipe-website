@@ -1,5 +1,6 @@
 import React from "react";
-import "./Footer.css"
+import "./Footer.css";
+import Logo from '../../img/YemekRehberi.png'
 
 const Footer = () => {
     return (
@@ -21,7 +22,8 @@ const Footer = () => {
               <div className="footer-logo">
                 <a className="footer-logo-link"      href="www.erdemdoruk.me">
                   <span className="hidden-link-text">LOGO</span>
-                  <h1>LOGO</h1>
+                  {/* <h1>LOGO</h1> */}
+                  <img src={Logo} className="footerlogo" alt="Logo"/>
                 </a>
               </div>
               <div className="footer-menu">

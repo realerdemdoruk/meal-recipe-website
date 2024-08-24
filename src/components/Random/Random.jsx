@@ -133,10 +133,6 @@ const Random = () => {
                             </motion.div>
                         }
                     </div>
-
-                    <button onClick={fetchRandomMeal} className="random-button">
-                        Yeni Rastgele Yemek
-                    </button>
                 </div>
             }
         </div>

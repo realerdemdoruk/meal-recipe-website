@@ -9,7 +9,7 @@ import CategoryList from './components/CategoryList/CategoryList';
 import Category from './components/Category/Category';
 import Random from './components/Random/Random';
 import {AnimatePresence} from 'framer-motion';
-
+import { Navigate } from "react-router-dom";
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
 
         <div className="content">
           <AnimatePresence exitBeforeEnter>
-            <Routes>
+            <Routes><Route path="/" element={<Navigate to="/meal-recipe-website-reactjs/" />} />
               <Route path="/meal-recipe-website-reactjs/" element={<Homepage/>}/>
               <Route path="/meal-recipe-website-reactjs/find" element={<Findpage/>}/>
               <Route path="/meal-recipe-website-reactjs/meal/:idMeal" element={<MealDetailsPage/>}/>

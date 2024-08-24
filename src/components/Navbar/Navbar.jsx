@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../../img/HeyMealLogo.png'
+import Logo from '../../img/YemekRehberi.png'
 import '../../dist.css/Navbar.css'
 import {Link} from 'react-router-dom'
 
@@ -23,13 +23,14 @@ const Navbar = () => {
         <div className="navbar">
             <Link to="/meal-recipe-website-reactjs/"className="nav__brand">
                 <img src={Logo} alt="Logo"/>
-                <h2>Hey</h2><h2 className="logo__last">Meal</h2>
+                <h2 id="idfood">Yemek</h2><h2 className="logo__last">Rehberi</h2>
             </Link>
 
             <ul className={navActive}>
                 <li><Link to="/meal-recipe-website-reactjs/" onClick={navToggle} className="links" >Ana Sayfa</Link></li>
                 <li><Link to="/meal-recipe-website-reactjs/categories" onClick={navToggle} className="links" >Kategori</Link></li>
                 <li><Link to="/meal-recipe-website-reactjs/random" onClick={navToggle} href="/" className="links" >Rastgele</Link></li>
+                <li><Link to="/meal-recipe-website-reactjs/liked" onClick={navToggle} href="/" className="links" >Beğendikleriniz</Link></li>
               
             </ul>
             <button onClick={navToggle} className={btnActive}>

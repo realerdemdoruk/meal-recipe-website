@@ -69,6 +69,15 @@ const MealDetailsPage = () => {
                                     )
                                 ))}
                             </ul>
+                            <motion.h4
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 1, delay: 1, ease: 'easeOut', type: 'spring', stiffness: 200 }}
+                        >
+                 
+                            Beğendim
+                        </motion.h4>
                         </motion.div>
                     </div>
 
