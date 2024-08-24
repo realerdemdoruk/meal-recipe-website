@@ -27,7 +27,7 @@ const CategoryList = () => {
                                 className="category__container"
                                 key={category.idCategory}
                             >
-                                <Link to={`/meal-recipe-website-reactjs/category/${category.strCategory}`} className="category">
+                                <Link to={`/category/${category.strCategory}`} className="category">
                                     <div className="category__img">
                                         <img src={category.strCategoryThumb} alt={category.strCategory} />
                                     </div>

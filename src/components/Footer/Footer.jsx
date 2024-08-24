@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import Logo from '../../img/YemekRehberi.png'
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -21,8 +22,7 @@ const Footer = () => {
             <div className="footer-content-column">
               <div className="footer-logo">
                 <a className="footer-logo-link"      href="www.erdemdoruk.me">
-                  <span className="hidden-link-text">LOGO</span>
-                  {/* <h1>LOGO</h1> */}
+
                   <img src={Logo} className="footerlogo" alt="Logo"/>
                 </a>
               </div>
@@ -43,10 +43,14 @@ const Footer = () => {
             </div>
             <div className="footer-content-column">
               <div className="footer-menu">
-                <h2 className="footer-menu-name">Company</h2>
+                <h2 className="footer-menu-name">
+                <Link to="/about"  className="links" >Hakkımızda</Link>
+
+                </h2>
                 <ul id="menu-company" className="footer-menu-list">
                   <li className="menu-item">
-                    <a      href="www.erdemdoruk.me">Contact</a>
+                    {/* <a      href="www.erdemdoruk.me">Contact</a> */}
+                    <Link to="/contact"  className="links" >İletişim</Link>
                   </li>
                   <li className="menu-item">
                     <a      href="www.erdemdoruk.me">News</a>
@@ -98,7 +102,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="footer-content-column">
-              <div className="footer-call-to-action">
+              {/* <div className="footer-call-to-action">
                 <h2 className="footer-call-to-action-title">Let's Chat</h2>
                 <p className="footer-call-to-action-description">
                   Have a support question?
@@ -110,7 +114,7 @@ const Footer = () => {
                 >
                   Get in Touch
                 </a>
-              </div>
+              </div> */}
               <div className="footer-call-to-action">
                 <h2 className="footer-call-to-action-title">Bize Ulaşın</h2>
                 <p className="footer-call-to-action-link-wrapper">

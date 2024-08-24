@@ -31,8 +31,8 @@ const Homepage = () => {
                         animate={{opacity: 1, x: 0 }}
                         transition ={{ duration: 1 ,delay: .6, type: 'spring', ease: 'easeOut'}}>
                         <div className="left__buttons">
-                            <Link to="/meal-recipe-website-reactjs/find" className="find__btn btn">Tarifi Bul</Link>
-                            <Link to="/meal-recipe-website-reactjs/random" className="random__btn btn"><i className='bx bxs-dice-5 bx-tada bx-rotate-90' ></i>Şaşırt Beni!</Link>
+                            <Link to="/find" className="find__btn btn">Tarifi Bul</Link>
+                            <Link to="/random" className="random__btn btn"><i className='bx bxs-dice-5 bx-tada bx-rotate-90' ></i>Şaşırt Beni!</Link>
                         </div>
                     </motion.div>
                 </div>
@@ -73,7 +73,7 @@ const Homepage = () => {
                                 exit={{opacity: 0}}
                                 transition={{duration: 1, delay:1, ease: 'easeOut', type: 'spring', stiffness: '200'}}>
                                 
-                                <Link to={`/meal-recipe-website-reactjs/meal/${meal.idMeal}`} className="meal__item">
+                                <Link to={`/meal/${meal.idMeal}`} className="meal__item">
                                     <img src={meal.strMealThumb} alt="" />
                                     <div className="meal__lowered">
                                         <h3>{meal.strMeal}</h3>
@@ -94,7 +94,7 @@ const Homepage = () => {
                 <div className="about__section">
                     <div className="about__left">
                         <h1>Hakkımızda</h1>
-                        <p>Yemek Rehberi, yemek tarifi aramanıza ve sizin için en iyi yemek tarifini bulmanıza olanak tanıyan bir yemek tarifi web sitesidir. Bir yemek tarifini ada, kategoriye veya malzemeye göre arayabilirsiniz. Ayrıca rastgele bir yemek tarifi de arayabilirsiniz. Burada sizin için en iyi yemek tariflerinden birini bulabilirsiniz.</p>
+                        <p>Yemek Rehberi, yemek tarifi aramanıza ve sizin için en iyi yemek tarifini bulmanıza olanak tanıyan bir yemek tarifi web sitesidir. Bir yemek tarifini ara, kategoriye veya malzemeye göre arayabilirsiniz. Ayrıca rastgele bir yemek tarifi de arayabilirsiniz. Burada sizin için en iyi yemek tariflerinden birini bulabilirsiniz.</p>
                     </div>
                     <div className="img__container">
                         <img src={About} alt="about"></img>

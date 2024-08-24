@@ -18,7 +18,7 @@ const Liked = () => {
         {likedMeals.map((meal) => (
           <div key={meal.idMeal} className="meal__item__container">
             <Link
-              to={`/meal-recipe-website-reactjs/meal/${meal.idMeal}`}
+              to={`/meal/${meal.idMeal}`}
               className="meal__item"
             >
               <img src={meal.strMealThumb} alt={meal.strMeal} />

@@ -35,8 +35,6 @@ const Category = () => {
                 </motion.div>
             ) : (
                 <>
-                    
-
                     <div className="meal__list">
                         {meals.map((meal, index) => (
                             <div key={meal.idMeal}>
@@ -46,7 +44,7 @@ const Category = () => {
                                     exit={{ opacity: 0, y: 10 }}
                                     transition={{ duration: 1, ease: 'easeOut', type: 'spring', stiffness: '200', delay: index * 0.3 }}
                                 >
-                                    <Link to={`/meal-recipe-website-reactjs/meal/${meal.idMeal}`} className="meal__item">
+                                    <Link to={`/meal/${meal.idMeal}`} className="meal__item">
                                         <img src={meal.strMealThumb} alt={meal.strMeal} />
                                         <div className="meal__lower">
                                             <h3>{meal.strMeal}</h3>

@@ -1,0 +1,95 @@
+.contact__container {
+    max-width: 600px;
+    margin: 2rem auto; /* Increased margin for spacing from the top */
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact__container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem; /* Increased gap for spacing between form fields */
+  }
+  
+  .input__group {
+    position: relative;
+  }
+  
+  .contact__input,
+  .contact__textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;    
+    box-sizing: border-box; /* Ensures the width includes padding and borders */
+  }
+
+  .contact__textarea {
+    resize: vertical; /* Allows vertical resizing only */
+}
+  
+  .contact__input:focus,
+  .contact__textarea:focus {
+    border-color: #007bff;
+  }
+  
+  .contact__label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 0.2rem;
+    color: #777;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .contact__input:focus + .contact__label,
+  .contact__input:not(:placeholder-shown) + .contact__label,
+  .contact__textarea:focus + .contact__label,
+  .contact__textarea:not(:placeholder-shown) + .contact__label {
+    top: -0.8rem;
+    font-size: 0.9rem;
+    color: #007bff;
+  }
+  
+  .contact__shadow {
+    position: absolute;
+    bottom: -4px;
+    left: 4px;
+    right: 4px;
+    height: 4px;
+    background: #007bff;
+    opacity: 0.3;
+    border-radius: 5px;
+  }
+  
+  .contact__button {
+    padding: 0.8rem 2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Ensure the button is centered */
+}
+  
+  .contact__button:hover {
+    background-color: #0056b3;
+  }
+  
