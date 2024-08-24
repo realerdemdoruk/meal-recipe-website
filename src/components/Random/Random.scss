@@ -1,3 +1,35 @@
+button {
+    margin-top: 50px;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF6347; /* Tomato red for a vibrant look */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 16px; /* Font size */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+}
+
+button:hover {
+    background-color: #FF4500; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+button:active {
+    background-color: #FF6347; /* Original color on click */
+    transform: scale(0.95); /* Slightly shrink button on click */
+}
+
+.like__button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.5); /* Add custom focus shadow */
+}
+
+
 .category__details {
     width: 100%;
 
@@ -64,6 +96,8 @@
             width: 100%;
             column-gap: 2rem;
             .ingredients__container {
+                display: flex;
+                flex-direction: column;
                 border-radius: 1rem;
                 margin: 1.5rem 0;
                 margin-bottom: 0;

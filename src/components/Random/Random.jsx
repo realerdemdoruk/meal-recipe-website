@@ -1,3 +1,4 @@
+// src/components/Random/Random.jsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Loading from '../../img/Loading.gif';
@@ -8,13 +9,14 @@ import ReactPlayer from 'react-player';
 import '../../dist.css/Random.css';
 import { v4 as uuid } from 'uuid';
 import mealsData from '../../data/meals.json'; // meals.json dosyasını import etme
+import { useLikedMeals } from '../../context/LikedMealsContext'; // Context'ten hook'u import et
 
 const Random = () => {
     const [meal, setMeal] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
+    const { addMealToLiked } = useLikedMeals(); // Context'ten addMealToLiked fonksiyonunu al
 
-    // useCallback ile memoize edilmiş fetchRandomMeal fonksiyonu
     const fetchRandomMeal = useCallback(() => {
         try {
             setMeal(getRandomMeal());
@@ -26,7 +28,6 @@ const Random = () => {
     }, []);
 
     const getRandomMeal = () => {
-        // Random meal seç
         const randomIndex = Math.floor(Math.random() * mealsData.meals.length);
         return mealsData.meals[randomIndex];
     };
@@ -34,6 +35,12 @@ const Random = () => {
     useEffect(() => {
         fetchRandomMeal();
     }, [fetchRandomMeal]);
+
+    const handleLike = () => {
+        if (meal) {
+            addMealToLiked(meal);
+        }
+    };
 
     return (
         <div className="category__details">
@@ -59,7 +66,7 @@ const Random = () => {
                             <div className="meal__name">
                                 <h2>{meal.strMeal}</h2>
                                 <p className="meal__area"><i className='bx bx-map'></i>{meal.strArea}</p>
-                                <p>Category: {meal.strCategory}</p>
+                                <p>Kategori: {meal.strCategory}</p>
                             </div>
                         </motion.div>
 
@@ -90,7 +97,16 @@ const Random = () => {
                                         }
                                         {/* Diğer ingredient ve measure alanları da aynı şekilde burada listelenebilir */}
                                     </ul>
-                                </motion.div>
+                                </motion.div>  <motion.button
+                        className="like__button"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        onClick={handleLike}
+                        transition={{ duration: 1, delay: 1, ease: 'easeOut', type: 'spring', stiffness: 200 }}
+                    >
+                        Beğendim
+                    </motion.button>
                             </div>
 
                             <div className="instruction__container">
@@ -133,6 +149,7 @@ const Random = () => {
                             </motion.div>
                         }
                     </div>
+                  
                 </div>
             }
         </div>

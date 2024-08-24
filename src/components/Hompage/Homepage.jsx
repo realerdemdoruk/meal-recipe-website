@@ -23,7 +23,7 @@ const Homepage = () => {
                         initial={{opacity: 0, x: -50}}
                         animate={{opacity: 1, x: 0  }}
                         transition ={{ duration: 1 ,delay: .6, type: 'spring'}}>
-                            Hey Meal ile yemek tarifi aramak artık çok kolay! İyi bir akşam yemeğinden sonra insan herkesi, hatta kendi akrabalarını bile affedebilir.
+                            Yemek Rehberi ile yemek tarifi aramak artık çok kolay! İyi bir akşam yemeğinden sonra insan herkesi, hatta kendi akrabalarını bile affedebilir.
                     </motion.p>
 
                     <motion.div
@@ -94,7 +94,7 @@ const Homepage = () => {
                 <div className="about__section">
                     <div className="about__left">
                         <h1>Hakkımızda</h1>
-                        <p>HeyMeal, yemek tarifi aramanıza ve sizin için en iyi yemek tarifini bulmanıza olanak tanıyan bir yemek tarifi web sitesidir. Bir yemek tarifini ada, kategoriye veya malzemeye göre arayabilirsiniz. Ayrıca rastgele bir yemek tarifi de arayabilirsiniz. Burada sizin için en iyi yemek tariflerinden birini bulabilirsiniz.</p>
+                        <p>Yemek Rehberi, yemek tarifi aramanıza ve sizin için en iyi yemek tarifini bulmanıza olanak tanıyan bir yemek tarifi web sitesidir. Bir yemek tarifini ada, kategoriye veya malzemeye göre arayabilirsiniz. Ayrıca rastgele bir yemek tarifi de arayabilirsiniz. Burada sizin için en iyi yemek tariflerinden birini bulabilirsiniz.</p>
                     </div>
                     <div className="img__container">
                         <img src={About} alt="about"></img>
