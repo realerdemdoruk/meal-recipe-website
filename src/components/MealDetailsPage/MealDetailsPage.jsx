@@ -18,7 +18,6 @@ const supabase = createClient(
 
 const MealDetailsPage = () => {
   const [userComment, setUserComment] = useState([]);
-  const [yemekId, setYemekId] = useState([]);
   const [name, setName] = useState([]);
   const [lastName, setLastName] = useState([]);
   const [eposta, setEPosta] = useState([]);
@@ -36,9 +35,6 @@ const MealDetailsPage = () => {
 
     setUserComment(usercommentAPI);
   }
-
-
-  
 
   useEffect(() => {
     getUsersComment();
@@ -63,8 +59,6 @@ const MealDetailsPage = () => {
   // Meal verisini filtrele
   const meal = data.meals.find((meal) => meal.idMeal === idMeal);
 
-  
-
   const handleLike = () => {
     addMealToLiked(meal);
   };
@@ -73,7 +67,6 @@ const MealDetailsPage = () => {
     return <div>Yemek bulunamadı.</div>;
   }
 
-  console.log()
   return (
     <div className="meal__details__page">
       <div className="meal__details">
@@ -199,6 +192,11 @@ const MealDetailsPage = () => {
             </motion.div>
           </div>
         </div>
+
+
+
+
+
 
         {meal.strYoutube && (
           <motion.div
