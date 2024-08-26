@@ -492,3 +492,43 @@
     }
   }
   
+
+  .comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .comment-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .comment-header {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .comment-name {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-surname {
+    color: #555;
+  }
+  
+  .comment-message {
+    color: #666;
+    line-height: 1.5;
+  }
+  

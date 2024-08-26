@@ -1,5 +1,5 @@
 // src/components/MealDetailsPage/MealDetailsPage.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../../data/meals.json"; // JSON dosyasını içe aktarın
 import "../../dist.css/MealDetailsPage.css"; // Stil dosyasını unutmayın
@@ -8,14 +8,62 @@ import Hat from "../../img/hat.gif";
 import Video from "../../img/video.gif";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
+import { createClient } from "@supabase/supabase-js";
 import { useLikedMeals } from "../../context/LikedMealsContext"; // Context'ten hook'u import et
 
+const supabase = createClient(
+  "https://qlgwpthiwclfbgzzjmjw.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFsZ3dwdGhpd2NsZmJnenpqbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQ2MDUzOTIsImV4cCI6MjA0MDE4MTM5Mn0.N9-IULDnpuUWR_PNXvXyzdTTIMRsxRAxVGrAagaJn4k"
+);
+
 const MealDetailsPage = () => {
+  const [userComment, setUserComment] = useState([]);
+  const [yemekId, setYemekId] = useState([]);
+  const [name, setName] = useState([]);
+  const [lastName, setLastName] = useState([]);
+  const [eposta, setEPosta] = useState([]);
+  const [comment, setComment] = useState([]);
+
+  async function getUsersComment() {
+    const { data: usercommentAPI, error } = await supabase
+      .from("usercomment")
+      .select("*");
+
+    if (error) {
+      console.error("Error fetching comments:", error);
+      return;
+    }
+
+    setUserComment(usercommentAPI);
+  }
+
+
+  
+
+  useEffect(() => {
+    getUsersComment();
+  }, []);
+
+
+  async function createComment() {
+    await supabase.from("usercomment").insert({
+      idmeal: meal.idMeal,
+      name:name,
+      surname:lastName,
+      eposta:eposta,
+      comment:comment
+    });
+
+    getUsersComment()
+    
+  }
   const { idMeal } = useParams();
   const { addMealToLiked } = useLikedMeals(); // Context'ten addMealToLiked fonksiyonunu al
 
   // Meal verisini filtrele
   const meal = data.meals.find((meal) => meal.idMeal === idMeal);
+
+  
 
   const handleLike = () => {
     addMealToLiked(meal);
@@ -25,6 +73,7 @@ const MealDetailsPage = () => {
     return <div>Yemek bulunamadı.</div>;
   }
 
+  console.log()
   return (
     <div className="meal__details__page">
       <div className="meal__details">
@@ -178,39 +227,68 @@ const MealDetailsPage = () => {
           </motion.div>
         )}
 
+        <div className="comments-container">
+          {userComment.map((comment) => (
+            <div key={comment.id} className="comment-card">
+              <div className="comment-header">
+                <span className="comment-name">{comment.name}</span>
+                <span className="comment-surname">{comment.surname}</span>
+              </div>
+              <div className="comment-message">{comment.comment}</div>
+            </div>
+          ))}
+        </div>
+
         <div className="userComment">
           <h2>Yorum Yap!</h2>
           <div className="video">
             <form className="user__form">
               <div className="input__group">
+                <label className="user">İsim</label>
                 <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   type="text"
                   name="name"
                   required
-            className="user__input"
+                  className="user__input"
                 />
-                <label className="user__label">İsim</label>
                 <span className="user__shadow"></span>
               </div>
-
               <div className="input__group">
+                <label className="user">Soyisim</label>
                 <input
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  type="text"
+                  name="Soyisim"
+                  required
+                  className="user__input"
+                />
+                <span className="user__shadow"></span>
+              </div>
+              <div className="input__group">
+                <label className="user">E-posta</label>
+                <input
+                  value={eposta}
+                  onChange={(e) => setEPosta(e.target.value)}
                   type="email"
                   name="email"
                   required
                   className="user__input"
                 />
-                <label className="user">E-posta</label>
                 <span className="user__shadow"></span>
               </div>
 
               <div className="input__group">
-                <textarea
-                  name="message"
-                  required
-                  className="user__textarea"
-                />
                 <label className="user">Mesaj</label>
+                <textarea
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  name="message"
+                  className="user__textarea"
+                  required
+                />
                 <span className="user__shadow"></span>
               </div>
 
@@ -219,6 +297,11 @@ const MealDetailsPage = () => {
                 whileTap={{ scale: 0.95 }}
                 type="submit"
                 className="contact__button"
+                onClick={(e) => {
+         
+                  e.preventDefault(); // Formun varsayılan davranışını engelle
+                  createComment();
+                }}
               >
                 Gönder
               </motion.button>
