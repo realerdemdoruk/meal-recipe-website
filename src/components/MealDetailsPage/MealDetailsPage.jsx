@@ -1,5 +1,5 @@
 // src/components/MealDetailsPage/MealDetailsPage.jsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import data from "../../data/meals.json"; // JSON dosyasını içe aktarın
 import "../../dist.css/MealDetailsPage.css"; // Stil dosyasını unutmayın
@@ -8,50 +8,10 @@ import Hat from "../../img/hat.gif";
 import Video from "../../img/video.gif";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
-import { createClient } from "@supabase/supabase-js";
 import { useLikedMeals } from "../../context/LikedMealsContext"; // Context'ten hook'u import et
 import CommentForm from '../CommentForm/CommentForm';
 
-const supabase = createClient(
-  "https://qlgwpthiwclfbgzzjmjw.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFsZ3dwdGhpd2NsZmJnenpqbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQ2MDUzOTIsImV4cCI6MjA0MDE4MTM5Mn0.N9-IULDnpuUWR_PNXvXyzdTTIMRsxRAxVGrAagaJn4k"
-);
-
 const MealDetailsPage = () => {
-  const [userComment, setUserComment] = useState([]);
-  const [name, setName] = useState([]);
-  const [lastName, setLastName] = useState([]);
-  const [eposta, setEPosta] = useState([]);
-  const [comment, setComment] = useState([]);
-
-  async function getUsersComment() {
-    const { data: usercommentAPI, error } = await supabase
-      .from("usercomment")
-      .select("*");
-
-    if (error) {
-      console.error("Error fetching comments:", error);
-      return;
-    }
-
-    setUserComment(usercommentAPI);
-  }
-
-  useEffect(() => {
-    getUsersComment();
-  }, []);
-
-  async function createComment() {
-    await supabase.from("usercomment").insert({
-      idmeal: meal.idMeal,
-      name: name,
-      surname: lastName,
-      eposta: eposta,
-      comment: comment,
-    });
-
-    getUsersComment();
-  }
   const { idMeal } = useParams();
   const { addMealToLiked } = useLikedMeals(); // Context'ten addMealToLiked fonksiyonunu al
 
