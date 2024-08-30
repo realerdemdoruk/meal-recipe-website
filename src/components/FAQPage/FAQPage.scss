@@ -1,0 +1,75 @@
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.faq-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f5a623;
+  padding-bottom: 0.5rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Geçiş efekti */
+}
+
+.faq-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hover durumunda gölge artışı */
+  transform: scale(1.02); /* Hover durumunda hafif büyüme */
+}
+
+.faq-item h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Başlığa geçiş efekti */
+}
+
+.faq-item h2:hover {
+  color: #f5a623; /* Başlığa hover durumunda renk değişimi */
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  opacity: 0; /* Başlangıçta cevap görünmez */
+  max-height: 0; /* Başlangıçta yüksekliği sıfır */
+  overflow: hidden; /* Taşan içeriği gizle */
+  transition: opacity 0.3s ease, max-height 0.3s ease; /* Geçiş efektleri */
+}
+
+.faq-item.active p {
+  opacity: 1; /* Cevap açık olduğunda görünür */
+  max-height: 200px; /* Açıldığında yüksekliği artır */
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 1rem;
+  }
+
+  .faq-container h1 {
+    font-size: 2rem;
+  }
+
+  .faq-item h2 {
+    font-size: 1.25rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+  }
+}

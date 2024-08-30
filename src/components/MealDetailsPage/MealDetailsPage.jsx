@@ -11,6 +11,10 @@ import ReactPlayer from "react-player";
 import { createClient } from "@supabase/supabase-js";
 import { useLikedMeals } from "../../context/LikedMealsContext"; // Context'ten hook'u import et
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { Navigation } from "swiper/modules"; // Navigation modülünü içe aktarın
+
 const supabase = createClient(
   "https://qlgwpthiwclfbgzzjmjw.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFsZ3dwdGhpd2NsZmJnenpqbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQ2MDUzOTIsImV4cCI6MjA0MDE4MTM5Mn0.N9-IULDnpuUWR_PNXvXyzdTTIMRsxRAxVGrAagaJn4k"
@@ -40,18 +44,16 @@ const MealDetailsPage = () => {
     getUsersComment();
   }, []);
 
-
   async function createComment() {
     await supabase.from("usercomment").insert({
       idmeal: meal.idMeal,
-      name:name,
-      surname:lastName,
-      eposta:eposta,
-      comment:comment
+      name: name,
+      surname: lastName,
+      eposta: eposta,
+      comment: comment,
     });
 
-    getUsersComment()
-    
+    getUsersComment();
   }
   const { idMeal } = useParams();
   const { addMealToLiked } = useLikedMeals(); // Context'ten addMealToLiked fonksiyonunu al
@@ -193,11 +195,6 @@ const MealDetailsPage = () => {
           </div>
         </div>
 
-
-
-
-
-
         {meal.strYoutube && (
           <motion.div
             className="video__container"
@@ -225,17 +222,56 @@ const MealDetailsPage = () => {
           </motion.div>
         )}
 
-        <div className="comments-container">
-          {userComment.map((comment) => (
-            <div key={comment.id} className="comment-card">
-              <div className="comment-header">
-                <span className="comment-name">{comment.name}</span>
-                <span className="comment-surname">{comment.surname}</span>
+        {/* <div className="comments-container">
+          <h1>Sizlerden Gelen Yorumlar</h1>
+          {userComment
+            .filter((comment) => comment.idmeal === meal.idMeal)
+            .map((comment) => (
+              <div key={comment.id} className="comment-card">
+                <div className="comment-header">
+                  <span className="comment-name">{comment.name}</span>
+                  <span className="comment-surname">{comment.surname}</span>
+                </div>
+                <div className="comment-message">{comment.comment}</div>
               </div>
-              <div className="comment-message">{comment.comment}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+        </div> */}
+    <h1 style={{marginTop:"50px"}}>
+          Sizin Yorumlarınız!</h1>
+        <Swiper
+          className="meal__details"
+          spaceBetween={20} // Yorumlar arasındaki boşluk
+          slidesPerView={3} // Aynı anda 3 yorum göster
+          loop={false} // Sonsuz döngüyü kapat
+          pagination={{ clickable: true }} // Sayfalama noktaları
+          navigation={true} // Sağ ve sol butonları aktif et
+          modules={[Navigation]}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+        >
+          {userComment
+            .filter((comment) => comment.idmeal === meal.idMeal)
+            .map((comment) => (
+              <SwiperSlide key={comment.id}>
+                <div className="comment-card">
+                  <div className="comment-header">
+                    <span className="comment-name">{comment.name}</span>
+                    <span className="comment-surname">{comment.surname}</span>
+                  </div>
+                  <div className="comment-message">{comment.comment}</div>
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
 
         <div className="userComment">
           <h2>Yorum Yap!</h2>
@@ -296,7 +332,6 @@ const MealDetailsPage = () => {
                 type="submit"
                 className="contact__button"
                 onClick={(e) => {
-         
                   e.preventDefault(); // Formun varsayılan davranışını engelle
                   createComment();
                 }}

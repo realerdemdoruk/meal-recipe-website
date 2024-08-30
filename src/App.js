@@ -12,7 +12,17 @@ import { AnimatePresence } from 'framer-motion';
 import Liked from './components/Liked/Liked';
 import { LikedMealsProvider } from './context/LikedMealsContext';
 import About from './components/About/About';
+
+
 import Contact from './Contact/Contact';
+
+import VisionAndMission from './components/VisionAndMission/VisionAndMission';
+import FAQPage from './components/FAQPage/FAQPage';
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+
+
+
+
 
 function App() {
   return (
@@ -32,6 +42,9 @@ function App() {
                 <Route path="/liked" element={<Liked />} />        
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />                  
+                <Route path="/vizyonVeMisyon" element={<VisionAndMission />} />                  
+                <Route path="/sss" element={<FAQPage />} />                  
+                <Route path="/gizlilikpolitikasi" element={<PrivacyPolicy />} />                  
               </Routes>
             </AnimatePresence>
           </div>
