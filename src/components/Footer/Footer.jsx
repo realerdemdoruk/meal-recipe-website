@@ -2,7 +2,11 @@ import React from "react";
 import "./Footer.css";
 import Logo from "../../img/YemekRehberi.png";
 import { Link } from "react-router-dom";
+import mealsData from '../../data/meals.json'; // JSON dosyasını import et
+const featuredMeals = mealsData.meals
 
+// Rastgele yemek verisini seç
+const randomMeal = featuredMeals[Math.floor(Math.random() * featuredMeals.length)];
 const Footer = () => {
   return (
     <div className="pg-footer">
@@ -93,7 +97,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="menu-item">
-                  <Link to="/random" className="links">
+                  <Link to={`/random/${randomMeal.idMeal}`} className="links">
                     Rastgele
                   </Link>
                 </li>
@@ -118,7 +122,7 @@ const Footer = () => {
                 >
                   Get in Touch
                 </a>
-              </div> */}
+              </div> */}  
             <div className="footer-call-to-action">
               <h2 className="footer-call-to-action-title">Bize Ulaşın</h2>
               <p className="footer-call-to-action-link-wrapper">

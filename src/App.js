@@ -38,7 +38,7 @@ function App() {
                 <Route path="/meal/:idMeal" element={<MealDetailsPage />} />
                 <Route path="/categories" element={<CategoryList />} />
                 <Route path="/category/:strCategory" element={<Category />} />
-                <Route path="/random" element={<Random />} />
+                <Route path="/random/:idMeal" element={<Random />} />
                 <Route path="/liked" element={<Liked />} />        
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />                  

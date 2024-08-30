@@ -10,6 +10,10 @@ import '../../dist.css/Random.css';
 import { v4 as uuid } from 'uuid';
 import mealsData from '../../data/meals.json'; // meals.json dosyasını import etme
 import { useLikedMeals } from '../../context/LikedMealsContext'; // Context'ten hook'u import et
+import CommentForm from '../CommentForm/CommentForm';
+
+
+
 
 const Random = () => {
     const [meal, setMeal] = useState(null);
@@ -152,6 +156,7 @@ const Random = () => {
                   
                 </div>
             }
+            <CommentForm  />
         </div>
     );
 }

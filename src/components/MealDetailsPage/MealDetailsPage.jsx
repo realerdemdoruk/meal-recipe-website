@@ -10,10 +10,7 @@ import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import { createClient } from "@supabase/supabase-js";
 import { useLikedMeals } from "../../context/LikedMealsContext"; // Context'ten hook'u import et
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
-import { Navigation } from "swiper/modules"; // Navigation modülünü içe aktarın
+import CommentForm from '../CommentForm/CommentForm';
 
 const supabase = createClient(
   "https://qlgwpthiwclfbgzzjmjw.supabase.co",
@@ -222,125 +219,7 @@ const MealDetailsPage = () => {
           </motion.div>
         )}
 
-        {/* <div className="comments-container">
-          <h1>Sizlerden Gelen Yorumlar</h1>
-          {userComment
-            .filter((comment) => comment.idmeal === meal.idMeal)
-            .map((comment) => (
-              <div key={comment.id} className="comment-card">
-                <div className="comment-header">
-                  <span className="comment-name">{comment.name}</span>
-                  <span className="comment-surname">{comment.surname}</span>
-                </div>
-                <div className="comment-message">{comment.comment}</div>
-              </div>
-            ))}
-        </div> */}
-    <h1 style={{marginTop:"50px"}}>
-          Sizin Yorumlarınız!</h1>
-        <Swiper
-          className="meal__details"
-          spaceBetween={20} // Yorumlar arasındaki boşluk
-          slidesPerView={3} // Aynı anda 3 yorum göster
-          loop={false} // Sonsuz döngüyü kapat
-          pagination={{ clickable: true }} // Sayfalama noktaları
-          navigation={true} // Sağ ve sol butonları aktif et
-          modules={[Navigation]}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {userComment
-            .filter((comment) => comment.idmeal === meal.idMeal)
-            .map((comment) => (
-              <SwiperSlide key={comment.id}>
-                <div className="comment-card">
-                  <div className="comment-header">
-                    <span className="comment-name">{comment.name}</span>
-                    <span className="comment-surname">{comment.surname}</span>
-                  </div>
-                  <div className="comment-message">{comment.comment}</div>
-                </div>
-              </SwiperSlide>
-            ))}
-        </Swiper>
-
-        <div className="userComment">
-          <h2>Yorum Yap!</h2>
-          <div className="video">
-            <form className="user__form">
-              <div className="input__group">
-                <label className="user">İsim</label>
-                <input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  type="text"
-                  name="name"
-                  required
-                  className="user__input"
-                />
-                <span className="user__shadow"></span>
-              </div>
-              <div className="input__group">
-                <label className="user">Soyisim</label>
-                <input
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  type="text"
-                  name="Soyisim"
-                  required
-                  className="user__input"
-                />
-                <span className="user__shadow"></span>
-              </div>
-              <div className="input__group">
-                <label className="user">E-posta</label>
-                <input
-                  value={eposta}
-                  onChange={(e) => setEPosta(e.target.value)}
-                  type="email"
-                  name="email"
-                  required
-                  className="user__input"
-                />
-                <span className="user__shadow"></span>
-              </div>
-
-              <div className="input__group">
-                <label className="user">Mesaj</label>
-                <textarea
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                  name="message"
-                  className="user__textarea"
-                  required
-                />
-                <span className="user__shadow"></span>
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                type="submit"
-                className="contact__button"
-                onClick={(e) => {
-                  e.preventDefault(); // Formun varsayılan davranışını engelle
-                  createComment();
-                }}
-              >
-                Gönder
-              </motion.button>
-            </form>
-          </div>
-        </div>
+<CommentForm  />
       </div>
     </div>
   );
