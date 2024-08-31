@@ -19,6 +19,8 @@ import Contact from './Contact/Contact';
 import VisionAndMission from './components/VisionAndMission/VisionAndMission';
 import FAQPage from './components/FAQPage/FAQPage';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 
 
@@ -45,6 +47,8 @@ function App() {
                 <Route path="/vizyonVeMisyon" element={<VisionAndMission />} />                  
                 <Route path="/sss" element={<FAQPage />} />                  
                 <Route path="/gizlilikpolitikasi" element={<PrivacyPolicy />} />                  
+                <Route path="/login" element={<Login />} />                  
+                <Route path="/register" element={<Register />} />                  
               </Routes>
             </AnimatePresence>
           </div>

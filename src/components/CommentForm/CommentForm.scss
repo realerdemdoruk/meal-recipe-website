@@ -19,6 +19,7 @@
         justify-content: center;
         width: 100%;
         margin-top: 2.5rem;
+        // background-color: red;
 
         .left__container {
             display: grid;
@@ -68,118 +69,7 @@
             }
         }
         
-        .body__container {
-            display: grid;
-            width: 100%;
-            column-gap: 2rem;
-            .ingredients__container {
-                // display: flex;
-                // flex-direction: column;
-                border-radius: 1rem;
-                margin: 1.5rem 0;
-                margin-bottom: 0;
-    
-                h2 {
-                    margin: 1rem 0;
-                    display: flex;
-                    align-items: center;
-                    img {
-                        width: 30px;
-                    }
-                }
-                .ingredients {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    gap: .4rem;
-                    width: 100%;
-                    margin: .5rem 0;
-                    
-                    .ingredient {
-                        cursor: pointer;
-                        display: grid;
-                        grid-template-columns: 30% 70%;
-                        align-items: center;
-                        justify-content: center;
-                        background: rgb(255, 226, 199);
-                        border-radius: 1rem;
-                        text-align: center;
-                        width: 40%;
-                        padding: .7rem;
-                        border: 1px solid #ffffff00;
-                        transition: .4s ease-in-out;
-                        
-                        img {
-                            width: 100%;
-                            padding: .1rem;
-                            margin: 0 auto;
-                            background: rgb(253, 253, 253);
-                            border-radius: .5rem;
-                        }
-    
-                        .ingredient__info {
-                            display: grid;
-                            text-align: center;
-                            h2 {
-                                margin: 0 auto;
-                                font-size: .8rem;
-                            }
-                            p {
-                                margin: 0 auto;
-                                font-size: .8rem;
-                            }
-                        }
-                        
-                        &:hover {
-                            transform: translate(-5px, -5px);
-                            border: 1px solid #000;
-                            box-shadow: 7px 7px 0px 0px rgba(0,0,0,1);
-                        }
-                        
-                    }
-                }
-            }
-    
-            .instruction__container {
-                margin: 1.5rem 0;
-    
-                h2 {
-                    margin: 1rem 0;
-                    display: flex;
-                    align-items: center;
-                    img {
-                        width: 30px;
-                    }
-                }
-                
-                .instruction {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1rem;
-                    width: 100%;
-                    p {
-                        width: 100%;
-                        color: rgb(0, 0, 0);
-                        cursor: pointer;
-                        border-radius: 1.5rem;
-                        padding: 1.5rem 1rem;
-                        background: rgb(255, 226, 199);
-                        border: .5px solid rgb(97, 97, 97);
-                        transition: .4s ease-in-out;
-                        
-                        &:hover {
-                            transform: translate(-7px, -7px);
-                            // box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.253);
-                            box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-                        }
-                    }
-                }
-            }
-        }
-
+   
         .video__container {
             h2 {
                 margin: 1rem 0;
@@ -490,42 +380,56 @@
   }
   
 
-  .comments-container {
-    max-width: 1000px; /* Genişliği artırarak daha fazla alan sağlama */
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  .comment-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    min-height: 150px; /* Kart yüksekliğini ayarlayın */
-  }
-  
-  .comment-header {
-    display: flex;
-    gap: 0.5rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .comment-name {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .comment-surname {
-    color: #555;
-  }
-  
-  .comment-message {
-    color: #666;
-    line-height: 1.5;
-  }
+    .comments-container {
+        max-width: 1000px; /* Genişliği artırarak daha fazla alan sağlama */
+        margin: 0 auto;
+        padding: 1rem;
+    }
+    
+    .comment-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        min-height: 150px; /* Kart yüksekliğini ayarlayın */
+    }
+    
+    .comment-header {
+        display: flex;
+        gap: 0.5rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .comment-name {
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .comment-surname {
+        color: #555;
+    }
+    
+    .comment-message {
+        color: #666;
+        line-height: 1.5;
+    }
+
+
+    .comment-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        width: 100%; /* Yorum kartının genişliğini sınırlamak için */
+        max-width: 300px; /* Yorum kartının maksimum genişliği */
+        box-sizing: border-box; /* Padding ve border dahil genişlik hesaplaması */
+    }
+
+
   .swiper-container {
     width: 100%;
     overflow: hidden;
@@ -540,16 +444,7 @@
     // max-width: 300px;
   }
   
-  .comment-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    width: 100%; /* Yorum kartının genişliğini sınırlamak için */
-    max-width: 300px; /* Yorum kartının maksimum genişliği */
-    box-sizing: border-box; /* Padding ve border dahil genişlik hesaplaması */
-  }
+
   
 
   .swiper-button-next, .swiper-button-prev {
@@ -574,3 +469,9 @@
   .swiper-button-prev {
     left: 10px; /* Sol butonun konumu */
   }
+
+
+
+//   .swiper-wrapper{
+//     min-width: 700px;
+//   }
