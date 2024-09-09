@@ -8,7 +8,11 @@ const Liked = () => {
   const { likedMeals, removeMealFromLiked } = useLikedMeals();
 
   if (likedMeals.length === 0) {
-    return <div>Henüz beğenilen yemek yok.</div>;
+    return <div
+    className='liked-meals'
+    >
+      <h2>Henüz beğenilen yemek yok.</h2>
+    </div>;
   }
 
   return (

@@ -105,41 +105,42 @@ const CommentForm = () => {
   return (
     <div className="meal__details__page">
       <div className="meal__details">
-        <h1 style={{ marginTop: "50px" }}>Sizin Yorumlarınız!</h1>
-       <Swiper
-  className="swiper-container"
-  spaceBetween={20}
-  slidesPerView={Math.min(userComment.length, 3)} // 1, 2 veya 3 olabiliyor
-  loop={false}
-  pagination={{ clickable: true }}
-  navigation={true}
-  modules={[Navigation]}
-  breakpoints={{
-    320: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2, // 2 yorum olduğunda 2 görünür
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  }}
->
-  {userComment
-    .filter((comment) => comment.idmeal === idMeal)
-    .map((comment) => (
-      <SwiperSlide key={comment.id}>
-        <div className="comment-card">
-          <div className="comment-header">
-            <span className="comment-name">{comment.name}</span>
-            <span className="comment-surname">{comment.surname}</span>
-          </div>
-          <div className="comment-message">{comment.comment}</div>
-        </div>
-      </SwiperSlide>
-    ))}
-</Swiper>
+        <h1 style={{ marginTop: "50px", marginBottom: "20px" }}>
+          Sizin Yorumlarınız!
+        </h1>
+        <Swiper
+          className="swiper-container"
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={true}
+          pagination={{ clickable: true }}
+          navigation={true}
+          modules={[Navigation]}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30, 
+            },
+          }}
+        >
+          {userComment
+            .filter((comment) => comment.idmeal === idMeal)
+            .map((comment) => (
+              <SwiperSlide key={comment.id}>
+                <div className="comment-card">
+                  <div className="comment-header">
+                    <span className="comment-name">{comment.name}</span>
+                    <span className="comment-surname">{comment.surname}</span>
+                  </div>
+                  <div className="comment-message">{comment.comment}</div>
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
 
         {user ? (
           <div className="userComment">

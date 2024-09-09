@@ -34,6 +34,11 @@
       "idCategory": "7",
       "strCategory": "Çorba",
       "strCategoryThumb": "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
+    },
+    {
+      "idCategory": "9",
+      "strCategory": "Meze",
+      "strCategoryThumb": "https://images.deliveryhero.io/image/fd-tr/LH/pnjt-listing.jpg"
     }
   ],
   "meals": [
@@ -248,6 +253,46 @@
       "strMeasure12": "1 su bardağı",
       "strIngredient13": "deniz tuzu",
       "strMeasure13": "bir tutam"
+    },
+    {
+      "idMeal": "53106",
+      "strMeal": "Karnıyarık",
+      "strCategory": "Sebzeler",
+      "strArea": "Türk",
+      "strInstructions": "Patlıcanları boydan ikiye bölün ve tuzlayın. Kıymayı soğan, sarımsak ve baharatlarla kavurun. Patlıcanları kızartın ve içlerini oyun. Kıymalı harcı patlıcanların içine doldurun. Domates ve biberleri üzerine dizin. Fırında 180 derecede 30 dakika pişirin.",
+      "strMealThumb": "https://cdn.yemek.com/mnresize/1250/833/uploads/2024/03/firinda-karniyarik-yemekcom.jpg",
+      "strYoutube": "https://www.youtube.com/watch?v=karniyarik",
+      "strIngredient1": "patlıcan",
+      "strMeasure1": "4 adet",
+      "strIngredient2": "kıyma",
+      "strMeasure2": "300g",
+      "strIngredient3": "soğan",
+      "strMeasure3": "1 adet",
+      "strIngredient4": "sarımsak",
+      "strMeasure4": "2 diş",
+      "strIngredient5": "domates",
+      "strMeasure5": "2 adet",
+      "strIngredient6": "biber",
+      "strMeasure6": "2 adet"
+    },
+    {
+      "idMeal": "53107",
+      "strMeal": "Haydari",
+      "strCategory": "Meze",
+      "strArea": "Türk",
+      "strInstructions": "Yoğurdu bir kaba alın ve iyice çırpın. İnce kıyılmış dereotu, ezilmiş sarımsak, zeytinyağı ve tuzu ekleyin. Tüm malzemeleri iyice karıştırın. Buzdolabında en az 1 saat dinlendirin ve servis yapın.",
+      "strMealThumb": "https://www.yemekolay.com/wp-content/uploads/2023/07/haydari-2.webp",
+      "strYoutube": "https://www.youtube.com/watch?v=haydari",
+      "strIngredient1": "yoğurt",
+      "strMeasure1": "2 su bardağı",
+      "strIngredient2": "dereotu",
+      "strMeasure2": "1/2 demet",
+      "strIngredient3": "sarımsak",
+      "strMeasure3": "2 diş",
+      "strIngredient4": "zeytinyağı",
+      "strMeasure4": "2 yemek kaşığı",
+      "strIngredient5": "tuz",
+      "strMeasure5": "1 çay kaşığı"
     }
   ]
 }

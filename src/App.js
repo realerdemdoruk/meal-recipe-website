@@ -12,19 +12,12 @@ import { AnimatePresence } from 'framer-motion';
 import Liked from './components/Liked/Liked';
 import { LikedMealsProvider } from './context/LikedMealsContext';
 import About from './components/About/About';
-
-
 import Contact from './Contact/Contact';
-
 import VisionAndMission from './components/VisionAndMission/VisionAndMission';
 import FAQPage from './components/FAQPage/FAQPage';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-
-
-
-
 
 function App() {
   return (
@@ -35,7 +28,6 @@ function App() {
           <div className="content">
             <AnimatePresence exitBeforeEnter>
               <Routes>
-                <Route path="/" element={<Homepage />} />
                 <Route path="/find" element={<Findpage />} />
                 <Route path="/meal/:idMeal" element={<MealDetailsPage />} />
                 <Route path="/categories" element={<CategoryList />} />
@@ -48,7 +40,8 @@ function App() {
                 <Route path="/sss" element={<FAQPage />} />                  
                 <Route path="/gizlilikpolitikasi" element={<PrivacyPolicy />} />                  
                 <Route path="/login" element={<Login />} />                  
-                <Route path="/register" element={<Register />} />                  
+                <Route path="/register" element={<Register />} />  
+                <Route path="/" element={<Homepage />} />                
               </Routes>
             </AnimatePresence>
           </div>

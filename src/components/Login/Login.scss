@@ -7,12 +7,16 @@ $button-hover-background: darken($primary-color, 10%);
 
 
 .login-container {
+  margin: 100px auto !important;
   background-color: $form-background;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+  margin: auto;
+
+  
 
   .login-form {
     h2 {
