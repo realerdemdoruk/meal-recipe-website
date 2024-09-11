@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../../dist.css/FAQPage.css';
+import { motion } from 'framer-motion';
+
 
 
 const faqData = [
@@ -33,15 +35,25 @@ const FAQPage = () => {
   };
 
   return (
-    <div className="faq-container">
+    <motion.div className="faq-container"
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 10 }}
+    transition={{ duration: 1, ease: 'easeOut', type: 'spring', stiffness: '200' }}
+    >
       <h1>Sıkça Sorulan Sorular</h1>
       {faqData.map((faq, index) => (
-        <div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
+        <motion.div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{ duration: 1, ease: 'easeOut', type: 'spring', stiffness: '200', delay: index * 0.3 }}
+        >
           <h2 onClick={() => handleToggle(index)}>{faq.question}</h2>
           <p>{faq.answer}</p>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

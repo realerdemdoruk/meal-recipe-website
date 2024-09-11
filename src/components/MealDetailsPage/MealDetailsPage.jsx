@@ -9,7 +9,7 @@ import Video from "../../img/video.gif";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import { useLikedMeals } from "../../context/LikedMealsContext"; // Context'ten hook'u import et
-import CommentForm from '../CommentForm/CommentForm';
+import CommentForm from "../CommentForm/CommentForm";
 
 const MealDetailsPage = () => {
   const { idMeal } = useParams();
@@ -178,8 +178,7 @@ const MealDetailsPage = () => {
             </div>
           </motion.div>
         )}
-
-<CommentForm  />
+        <CommentForm />
       </div>
     </div>
   );

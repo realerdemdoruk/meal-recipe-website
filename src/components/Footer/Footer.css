@@ -9,6 +9,7 @@
   
   
   .footer {
+    margin-top: 150px;
       background-color: #004658;
       color: #fff;
   }
@@ -284,3 +285,4 @@
 .footerlogo{
     max-width: 150px;
 }
+

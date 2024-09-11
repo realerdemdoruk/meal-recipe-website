@@ -123,7 +123,7 @@ const CommentForm = () => {
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 30, 
+              spaceBetween: 30,
             },
           }}
         >
