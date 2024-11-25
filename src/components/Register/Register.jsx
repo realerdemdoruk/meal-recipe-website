@@ -64,44 +64,62 @@ const Register = () => {
   }, [registrationSuccess, navigate]);
 
   return (
-    <div className="register-page">
-      <div className="register-container">
-        <h2>Kayıt Ol</h2>
-        <form onSubmit={MailSignUp}>
+    <div className="register-container">
+    <div className="register-form">
+      <h2>Kayıt Ol</h2>
+      <form onSubmit={MailSignUp}>
+        <div className="input-group">
+          <label htmlFor="firstName">Ad</label>
           <input
             type="text"
-            placeholder="Adınız"
+            id="firstName"
+            placeholder="Adınızı girin"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
+        </div>
+        <div className="input-group">
+          <label htmlFor="lastName">Soyad</label>
           <input
             type="text"
-            placeholder="Soyadınız"
+            id="lastName"
+            placeholder="Soyadınızı girin"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             required
           />
+        </div>
+        <div className="input-group">
+          <label htmlFor="email">E-posta Adresi</label>
           <input
             type="email"
-            placeholder="Email"
+            id="email"
+            placeholder="E-posta adresinizi girin"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+        </div>
+        <div className="input-group">
+          <label htmlFor="password">Şifre</label>
           <input
             type="password"
-            placeholder="Şifre"
+            id="password"
+            placeholder="Şifrenizi girin"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">Kayıt Ol</button>
-        </form>
+        </div>
+        <button type="submit" className="register-button">
+          Kayıt Ol
+        </button>
         {error && <p className="error-message">{error}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}
-      </div>
+      </form>
     </div>
+  </div>
   );
 };
 

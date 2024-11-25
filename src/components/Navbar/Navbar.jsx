@@ -53,7 +53,7 @@ const Navbar = () => {
     <div className="navbar">
       <Link to="/" className="nav__brand">
         <img src={Logo} alt="Logo" />
-        <h2 id="idfood">Yemek</h2><h2 className="logo__last">Rehberi</h2>
+        <h2 id="idfood">Yemek</h2><h2 className="logo__last">Günlüğü</h2>
       </Link>
 
       <ul className={navActive}>

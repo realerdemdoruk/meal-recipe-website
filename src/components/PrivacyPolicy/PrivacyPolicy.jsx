@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import "../../dist.css/PrivacyPolicy.css";
+import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
   const headingDelays = [0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1];
@@ -103,7 +104,12 @@ const PrivacyPolicy = () => {
         8. İletişim
       </motion.h2>
       <p>
-        Gizlilik politikamızla ilgili herhangi bir sorunuz varsa, bizimle iletişime geçebilirsiniz. İletişim bilgileri için [İletişim sayfamızı](#) ziyaret edebilirsiniz.
+        Gizlilik politikamızla ilgili herhangi bir sorunuz varsa, bizimle iletişime geçebilirsiniz. İletişim bilgileri için   <Link to="/contact"
+        style={{
+          color:"orange"
+        }}>
+                    İletişim
+                  </Link> sayfamızı ziyaret edebilirsiniz.
       </p>
     </motion.div>
   );

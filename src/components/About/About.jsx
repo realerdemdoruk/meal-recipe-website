@@ -19,7 +19,7 @@ const About = () => {
         <div className="about__left">
           <h1>Hakkımızda</h1>
           <p>
-            Yemek Rehberi, yemek tarifi aramanıza ve sizin için en iyi yemek
+            Yemek Günlüğü, yemek tarifi aramanıza ve sizin için en iyi yemek
             tarifini bulmanıza olanak tanıyan bir yemek tarifi web sitesidir.
             Bir yemek tarifini ara, kategoriye veya malzemeye göre
             arayabilirsiniz. Ayrıca rastgele bir yemek tarifi de
